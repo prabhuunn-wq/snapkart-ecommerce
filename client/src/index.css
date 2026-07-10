@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0a0e1a;
+  color: #ffffff;
+}
+
+@supports not (background: linear-gradient(in oklab, red, blue)) {
+  * {
+    background-image: initial !important;
+  }
+}
