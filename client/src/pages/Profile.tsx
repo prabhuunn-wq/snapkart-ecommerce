@@ -102,6 +102,61 @@ const Profile = () => {
           </span>
         </Link>
       </div>
+
+      <div className="bg-[#111827] border border-white/10 rounded-xl p-6">
+        <h2 className="text-lg font-semibold text-white mb-4">Delivery Address</h2>
+        <form onSubmit={handleSave} className="space-y-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="w-full bg-[#0a0e17] border border-white/10 rounded-lg px-4 py-2 text-white text-sm outline-none focus:border-purple-500/50"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            className="w-full bg-[#0a0e17] border border-white/10 rounded-lg px-4 py-2 text-white text-sm outline-none focus:border-purple-500/50"
+            required
+          />
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="City"
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="w-full bg-[#0a0e17] border border-white/10 rounded-lg px-4 py-2 text-white text-sm outline-none focus:border-purple-500/50"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Pin Code"
+              value={pinCode}
+              onChange={(e) => setPinCode(e.target.value)}
+              className="w-full bg-[#0a0e17] border border-white/10 rounded-lg px-4 py-2 text-white text-sm outline-none focus:border-purple-500/50"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full bg-[#0a0e17] border border-white/10 rounded-lg px-4 py-2 text-white text-sm outline-none focus:border-purple-500/50"
+            required
+          />
+          <button
+            type="submit"
+            disabled={saving}
+            className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white text-sm font-medium py-2.5 rounded-lg hover:opacity-90 transition disabled:opacity-50"
+          >
+            {saving ? "Saving..." : "Save Address"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
